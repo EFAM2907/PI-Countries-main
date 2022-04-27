@@ -18,11 +18,19 @@
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
-const { conn } = require('./src/db.js');
+const {conn} = require('./src/db.js');
+  // const {loadDb} = require('./src/loadDb/loadDb.js')
+const {getAllCountries} = require('./src/controladores/country.js');
 
-// Syncing all the models at once.
+ 
+   
+
+
 conn.sync({ force: true }).then(() => {
+   
   server.listen(3001, () => {
+       getAllCountries();
     console.log('%s listening at 3001'); // eslint-disable-line no-console
   });
 });
+
