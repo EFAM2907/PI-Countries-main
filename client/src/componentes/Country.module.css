@@ -1,0 +1,11 @@
+.countryContainer{
+    background-color: transparent;
+    border: 1px black solid;
+    border-radius: 4%;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-top: 1em;
+    width: 20%; 
+    height: 250px;
+      
+} 

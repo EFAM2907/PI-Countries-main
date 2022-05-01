@@ -20,7 +20,7 @@ async function getAllCountries(){
                     poblacion: e.population,
                   }
             })
-              console.log(filterApi)
+              // console.log(filterApi)
              return await Countries.bulkCreate(filterApi)
 
         }

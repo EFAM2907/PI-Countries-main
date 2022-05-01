@@ -20,7 +20,7 @@
 const server = require('./src/app.js');
 const {conn} = require('./src/db.js');
   // const {loadDb} = require('./src/loadDb/loadDb.js')
-const {getAllCountries} = require('./src/controladores/country.js');
+const {getAllCountries} = require('./src/api_db/country.js');
 
  
    

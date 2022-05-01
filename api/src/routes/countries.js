@@ -3,7 +3,7 @@
  const {Countries, Activities} = require('../db');
 // // Importar todos los routers;
 // // Ejemplo: const authRouter = require('./auth.js');
-const {getAllCountries} = require('../controladores/country.js');
+
 
  const router = Router();
 
@@ -16,7 +16,8 @@ router.get('/', async(req, res, next) => {
          }else{
                 const filter = countries.filter(country => country.name.toLowerCase().includes(name.toString().toLowerCase()));
                 res.json(filter);
-            }
+            
+}
 
 
 
@@ -25,6 +26,23 @@ router.get('/', async(req, res, next) => {
          next(error);
      }
 });
+
+router.get('/:id', async(req, res, next) => {
+    try{
+        const {id} = req.params;
+
+        const country = await Countries.findByPk(id, {
+            include: [{ model: Activities  }]});
+            
+          country ? res.json(country) : res.status(404).json({
+            message: 'No se encontro el pais'});
+                
+    }catch (error) {
+        next(error);
+    }
+});
+
+
 // // Configurar los routers
 // // Ejemplo: router.use('/auth', authRouter);
 
