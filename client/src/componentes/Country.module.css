@@ -1,11 +1,43 @@
 .countryContainer{
     background-color: transparent;
     border: 1px black solid;
-    border-radius: 4%;
-    margin-left: 2em;
-    margin-right: 2em;
-    margin-top: 1em;
-    width: 20%; 
-    height: 250px;
+    border-radius: 5px;
+    padding: 0.5rem;
+    justify-content: space-between;
+  
+   
+    
+   
       
 } 
+.countryContainer:hover{
+    background-color: rgba(255, 255, 255, 0.3);
+    
+}
+.imgContainer img{
+    width: 120px;
+    height: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+
+}
+.link{
+    text-decoration: none;
+    color: white;
+    display: contents;
+}
+.link:hover{
+    color: black;
+}
+.name{
+    text-align: center;
+}
+.continent{
+    text-align: center;
+} 
+.img{
+    width: 100px;
+    height: 100px;
+}

@@ -1,0 +1,9 @@
+.total{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 0.3em;
+    padding: 0.2em;
+    color: white;
+    justify-content: space-evenly;
+    align-self: flex-start;
+}

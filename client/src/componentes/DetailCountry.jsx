@@ -1,35 +1,50 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router"
-import { getCountryDetail } from "../action/index.js"
+import  {getCountriesDetail}  from "../action/index.js"
+import {Link} from "react-router-dom"
+import style from './DetailCountry.module.css'
+// import style from './DetailCountry.module.css'
 
-export default function DetailCountry() {
+export  function DetailCountry() {
 
 
-    const detailCountry = useSelector(state => state.countryDetail)
+    const stateDetail = useSelector(state => state.countryDetail)
     const { id } = useParams()
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(getCountryDetail(id))
-    }, [dispatch])
+        dispatch(getCountriesDetail(id))
 
+    }, [dispatch, id])
 
 
   return (
-    <div>
-        <div>
-            <h5>id: {detailCountry.id}</h5>
-            <h1>name: {detailCountry.name}</h1>
-            <img src={detailCountry.image} alt='not img' />
-            <h3>continente: {detailCountry.continente}</h3>
-            <h3>capital: {detailCountry.capital}</h3>
-            <h3>subregion: {detailCountry.subregion}</h3>
-            <h4>area: {detailCountry.area}</h4>
-            <h4>poblacion: {detailCountry.poblacion}</h4>
+    <div className={style.windowContainer}>
+        <div className={style.linkcontainer}>
+         
+                <Link className={style.link} to="/countries">
+                    Volver
+                </Link>
+           
+
+        </div>
+        <div lassName={style.container} >
+            
+            {/* <h4>ID: {stateDetail.id}</h4> */}
+            <h1> {stateDetail.name}</h1>
+            <img src={stateDetail.image} alt='not img' width= '300px' height= '200px'/>
+            <h3>CONTINENTE: {stateDetail.continente}</h3>
+            <h3>CAPITAL: {stateDetail.capital}</h3>
+            <h3>SUBREGION: {stateDetail.subregion}</h3>
+            <h4>AREA: {stateDetail.area} km2</h4>
+            <h4>POBLACION: {stateDetail.poblacion}</h4>
+               
         </div>
     </div>
-  )
+ )
 }
+
+ 

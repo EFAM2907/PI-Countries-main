@@ -1,20 +1,19 @@
 import React from "react"
-import { Link } from "react-router-dom"
 import styles from './Country.module.css'
-export default function Country({name, image, continente, id}) {
+export default function Country({name, image, continente }) {
   return (
-    <Link to = {`/countries/${id}`}>
+   
     <div className={styles.countryContainer}>
       <div>
-       <h3>{name}</h3>
+       <h2 className={styles.name}>{name}</h2>
       </div>
-           <div>
-            <img src={image} alt='imagenxd' />
+           <div >
+            <img  width='150px' height='100px'   src={image} alt='imagen de pais'  />
            </div>
                  <div>
-                   <h3>{continente}</h3>
+                   <p>{continente}</p>
                  </div>
     </div>
-    </Link>
+    
   )
 }

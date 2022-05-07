@@ -1,0 +1,43 @@
+.windowContainer {
+    display: flex;
+    justify-content: center;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    background-color: #6c8bbb; 
+    background-size: cover;
+  }
+.container {
+    margin-top: 5%;
+    padding: 2em;
+    backdrop-filter: blur(10px);
+    border-radius: 3%;
+    width: 50%;
+    height: 50%;
+    border: black 1px solid;
+    color: white;
+    margin-top: 20px;
+}
+.link {
+    position: absolute;
+    left: 50px;
+    top: 12px;
+    text-decoration: none;
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border: white 1px solid;
+    border-radius: 5%;
+    color: white;
+    border-radius: 5px;
+}
+.link:hover{
+    background-color: rgba(204, 204, 204, 0.3);
+}
+.linkcontainer {
+    margin-top: 30px;
+    
+    
+}
+.image{
+    width: 300px;
+}
