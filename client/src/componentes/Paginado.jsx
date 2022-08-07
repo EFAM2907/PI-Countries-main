@@ -21,7 +21,7 @@ export default function Paginado({paginaActual, setpaginaActual, maximo}) {
     <button disabled={paginaActual === 1 || paginaActual < 1} onClick={prevPagina}>
      ⬅Prev
     </button>
-    🌎
+    🌎 
     <button disabled={paginaActual === Math.ceil(maximo) || paginaActual > Math.ceil(maximo)} onClick={nexPagina}>
      Next➡
     </button>

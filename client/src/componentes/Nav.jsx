@@ -6,7 +6,7 @@ import style from './Nav.module.css'
 import {ASC, DESC, PASC, PDESC } from '../action/namesAction.js'
 import {Link} from 'react-router-dom'
 
-export default function Nav() {
+export default function Nav({setpaginaActual}) {
 
     const countries = useSelector(state => state.countries)
     const dispatch = useDispatch()
@@ -18,14 +18,18 @@ export default function Nav() {
         }if (e.target.value === DESC){
             dispatch(sortByDesc(countries))
 
-        }}
+        }
+        setpaginaActual(1)
+      }
 
         const handerChangeOderP=(e)=>{
             if(e.target.value === PASC){
             dispatch(sortByPasc(countries))
             }if (e.target.value === PDESC){
                 dispatch(sortByPdesc(countries))
-            }}
+            }
+          setpaginaActual(1)
+          }
 
       
       function handerName(e){
@@ -38,6 +42,7 @@ export default function Nav() {
   function handerFiltrarContinente(e){
     e.preventDefault()
     dispatch(filtrarPorContinente(e.target.value))
+    setpaginaActual(1)
     
 
   }

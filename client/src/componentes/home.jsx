@@ -35,7 +35,7 @@ const maximo = todosLosPaises.length / paisesPorPagina
         <h1>ESTAMOS EN LA HOME DE PAISES</h1>
       
        
-        <Nav />
+        <Nav setpaginaActual={setpaginaActual}/>
         
         <Paginado
         maximo={maximo}
