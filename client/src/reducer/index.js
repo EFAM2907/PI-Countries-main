@@ -22,6 +22,7 @@ const initialState = {
         return {
           ...state,
           countries: action.payload,
+          countryFilter: action.payload
         };
     }
       case GET_COUNTRY_DETAIL: {
@@ -32,12 +33,15 @@ const initialState = {
     }
     case FILTRAR_POR_CONTINENTE:{
 
-    // const paises = action.countries;
-    // const filtrar = action.payload === 'All' ? paises : paises.filter(i => i.continente === action.payload);
+      console.log('action', action.payload);
 
+      console.log('estamos en estado countries', state.countries)
+    const paises = state.countryFilter;
+    const filtrar = action.payload === 'All' ? paises : paises.filter(i => i.continente == action.payload);
         return {
             ...state,
-      countryFilter : action.countries.filter(i => i.continente === action.payload),
+            countries: filtrar
+            // state.countries.filter(i => i.continente?.includes(action.payload)),
   }}
   case BY_NAME:{
     return {

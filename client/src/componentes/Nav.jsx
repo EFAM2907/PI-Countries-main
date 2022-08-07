@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import  {getCountries, filtrarPorContinente,getByName, getByOrder,sortByAsc, sortByDesc, sortByPasc, sortByPdesc}  from '../action/index.js'
 import style from './Nav.module.css'
 import {ASC, DESC, PASC, PDESC } from '../action/namesAction.js'
-
+import {Link} from 'react-router-dom'
 
 export default function Nav() {
 
@@ -30,6 +30,7 @@ export default function Nav() {
       
       function handerName(e){
         dispatch(getByName(e.target.value))
+ 
       }
  
     
@@ -37,20 +38,25 @@ export default function Nav() {
   function handerFiltrarContinente(e){
     e.preventDefault()
     dispatch(filtrarPorContinente(e.target.value))
+    
+
   }
   
    
 
 
   return (
-    <div>
-      
-        <div className={style.total}>
-            <input type='text' placeholder='Buscar pais'  onChange={handerName}   />
+    <div className={style.container}>
+        <Link className={style.link} to="/activities" >
+         ADD ACTIVIDAD 
+        </Link>
+        <div>
+
+            <input  className={style.searchBarch} type='text' placeholder='Buscar pais'  onChange={handerName} />
             </div>
            
             <div>
-            <select onChange={handerFiltrarContinente}>
+            <select className={style.select} onChange={handerFiltrarContinente}>
             <option value='All' >All continents</option>
                         <option value='Africa' >Africa</option>
                         <option value='Antarctica' >Antarctica</option>
@@ -63,9 +69,9 @@ export default function Nav() {
              </div>
           
               <div>
-                <select onChange={handerChangeOder}>
+                <select className={style.select} onChange={handerChangeOder}>
                      
-                    <option >ordenar por...</option>
+                    <option >Organize...</option>
                     <option value = {ASC}>A-Z</option>
                     <option value ={DESC}>Z-A</option>
 
@@ -73,7 +79,8 @@ export default function Nav() {
                 </select>
               </div>
                    <div>
-                     <select onChange={handerChangeOderP}>
+                     <select className={style.select} onChange={handerChangeOderP}>
+                      <option>Population</option>
                     <option value={PASC}>Mayor poblacion</option>
                     <option value={PDESC}> Menor poblacion</option>
                     

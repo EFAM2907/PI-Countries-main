@@ -38,11 +38,11 @@ export function   getCountriesDetail(id){
 }
 
 
-export function filtrarPorContinente(continente) {
+export function filtrarPorContinente(continents) {
     return {
 
         type: FILTRAR_POR_CONTINENTE,
-        continente,
+        payload:continents,
 
     }
 }
@@ -91,3 +91,11 @@ export function sortByPasc(payload) {
             type: PDESC,
             payload
         }}
+
+        export function CrearActividad(actividad) {
+            return async function () {
+            
+                const res = await axios.post(`http://localhost:3001/activities`, actividad)
+
+        }} 
+       

@@ -1,9 +1,9 @@
 .fondo{
-    background-image: url("https://cdn.discordapp.com/attachments/698325896129413161/855200015815016458/27-273107_world-map-with-pins-hd-wallpaper-src-popular.png");
+    /* background-image: url("https://cdn.discordapp.com/attachments/698325896129413161/855200015815016458/27-273107_world-map-with-pins-hd-wallpaper-src-popular.png");
     background-position-x: center;
     background-position-y: center;
     min-height: 100vh;
-    background-size: cover;
+    background-size: cover; */
 }
 .reset{
     display: flex;
@@ -12,10 +12,21 @@
     color: white;
 }
 .countries{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    
+    text-decoration: none;
+ display:grid;
+ grid-template-columns: repeat(5, 200px);
+ gap: 35px;
+ justify-content: center;
+ margin-top: 25px;
+ margin-bottom:20px
 
   
+}
+
+.cards{
+
+ /* text-decoration: none;
+ display:grid;
+ grid-template-columns: repeat(4, 200px); */
+
 }

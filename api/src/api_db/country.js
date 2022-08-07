@@ -13,7 +13,7 @@ async function getAllCountries(){
                     id: e.cca3,
                     name: e.name.common,
                     image: e.flags[0] ? e.flags[0] : 'no hay flag',
-                    continente: e.continents,
+                    continente: e.continents[0],
                     capital: e.capital ? e.capital : 'No hay capital',
                     subregion: e.subregion,
                     area: e.area,

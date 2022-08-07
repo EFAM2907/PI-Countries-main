@@ -11,6 +11,7 @@ export default function Country({name, image, continente }) {
             <img  width='150px' height='100px'   src={image} alt='imagen de pais'  />
            </div>
                  <div>
+                 
                    <p>{continente}</p>
                  </div>
     </div>

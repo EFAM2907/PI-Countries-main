@@ -3,7 +3,7 @@ import React from 'react';
 import { Route } from 'react-router';
  import Home from './componentes/home';
   import {DetailCountry} from './componentes/DetailCountry';
-  import Activities from './componentes/activities';
+  import Activities from './componentes/actividades/Form';
   import landing from './componentes/landing';
 
 function App() {

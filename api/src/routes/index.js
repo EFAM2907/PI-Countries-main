@@ -1,4 +1,5 @@
 const { Router } = require('express');
+const axios = require('axios')
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
 const routerCountry = require('./countries.js');
@@ -8,7 +9,6 @@ const {Op} = require('sequelize');
 
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
-
 
 
 
@@ -38,13 +38,7 @@ router.use('/activities', routerActivities);
 
     //     const obj = {  name, dificultad, duracion, temporada, }
     //    const newActivity = await Activities.create(obj)
-
-       
     // res.send(newActivity);
-    
-        
-      
-      
     //     }catch(error){
     //   console.log(error);
     //   res.status(500).json({
