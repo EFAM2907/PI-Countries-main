@@ -23,24 +23,27 @@ export  function DetailCountry() {
 
   return (
     <div className={style.windowContainer}>
-        <div className={style.linkcontainer}>
+        <div className={style.container} >
+            
+            {/* <h4>ID: {stateDetail.id}</h4> */}
+            <div className={style.name}>
          
                 <Link className={style.link} to="/countries">
                     Volver
                 </Link>
            
 
-        </div>
-        <div lassName={style.container} >
-            
-            {/* <h4>ID: {stateDetail.id}</h4> */}
+        
             <h1> {stateDetail.name}</h1>
-            <img src={stateDetail.image} alt='not img' width= '300px' height= '200px'/>
-            <h3>CONTINENTE: {stateDetail.continente}</h3>
+            <img src={stateDetail.image} alt='not img' width= '400px' height= '300px'/>
+            </div>
+            <div className={style.info}>
+            <h3>CONTINENTE:{stateDetail.continente}</h3>
             <h3>CAPITAL: {stateDetail.capital}</h3>
             <h3>SUBREGION: {stateDetail.subregion}</h3>
             <h4>AREA: {stateDetail.area} km2</h4>
             <h4>POBLACION: {stateDetail.poblacion}</h4>
+            </div>
                
         </div>
     </div>

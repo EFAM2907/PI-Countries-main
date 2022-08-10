@@ -36,6 +36,9 @@ module.exports = (sequelize) => {
     poblacion: {	
       type: DataTypes.INTEGER,
     },
+    language:{
+      type: DataTypes.TEXT,
+    }
 
   });
 };

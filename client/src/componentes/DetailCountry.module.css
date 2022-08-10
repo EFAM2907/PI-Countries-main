@@ -1,20 +1,23 @@
 .windowContainer {
-    display: flex;
+    display: block;
     justify-content: center;
+    
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
     background-color: #8f0c84; 
     background-size: cover;
   }
 .container {
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
     margin-top: 5%;
     padding: 2em;
     backdrop-filter: blur(10px);
     border-radius: 3%;
     width: 50%;
     height: 50%;
-    border: black 1px solid;
-    color: white;
+
+    color: rgb(14, 12, 12);
     margin-top: 20px;
 }
 .link {
@@ -38,6 +41,13 @@
     
     
 }
-.image{
-    width: 300px;
+
+.info{
+    position: absolute;
+    left: 834px;
+    top:10px
 }
+.name h1{
+    color: white
+}
+

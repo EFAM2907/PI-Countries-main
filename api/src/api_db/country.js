@@ -14,13 +14,13 @@ async function getAllCountries(){
                     name: e.name.common,
                     image: e.flags[0] ? e.flags[0] : 'no hay flag',
                     continente: e.continents[0],
-                    capital: e.capital ? e.capital : 'No hay capital',
+                    capital: e.capital ? e.capital[0] : 'No hay capital',
                     subregion: e.subregion,
                     area: e.area,
                     poblacion: e.population,
                   }
             })
-              // console.log(filterApi)
+              // console.log('este es el llamado a la api',filterApi)
              return await Countries.bulkCreate(filterApi)
 
         }

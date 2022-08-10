@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
-import n from '../componentes/iconos/next.svg'
-import style from './Paginado.module.css'
+import s from './Paginado.module.css'
 
 export default function Paginado({paginaActual, setpaginaActual, maximo}) {
   const[input, setInput]= useState(1)
@@ -17,7 +16,7 @@ export default function Paginado({paginaActual, setpaginaActual, maximo}) {
 
 
   return (
-  <div>
+  <div className={s.container}>
     <button disabled={paginaActual === 1 || paginaActual < 1} onClick={prevPagina}>
      ⬅Prev
     </button>

@@ -7,10 +7,10 @@
 
 }
 .titulo{
-    position: absolute;
+    /* position: absolute;
     font-size: 40px;
     margin-top: 0px;
-    margin-left: 450px;
+    margin-left: 450px; */
     font-weight: bold;
     text-decoration: underline;
     color: white;
@@ -23,7 +23,7 @@
 }
 
 .inputName{
-    position: absolute;
+    /* position: absolute; */
     margin-top: 140px;
 
 }
@@ -38,30 +38,30 @@
     
 }
 .season{
-    width: 100px;
-    height: 30px;
+    /* width: 100px;
+    height: 30px; */
 }
 .difficulty{
-    width: 120px;
-    height: 30px;   
+    /* width: 120px;
+    height: 30px;    */
 }
 .selectDifficulty{
-    position: absolute;
+    /* position: absolute;
     margin-left: 600px;
-    margin-top: 300px;
+    margin-top: 300px; */
 }
 .selectSeasson{
-    position: absolute;
+    /* position: absolute;
     margin-top: 300px;
-    margin-left: 750px;
+    margin-left: 750px; */
     
 }
 .multiSelect{
-    display: flex;
+    /* display: flex;
     margin-top: 50px;
     margin-left: 300px;
     width: 270px;
-    height: 450px;
+    height: 450px; */
 }
 .butonAct{
     font-size: 20px;
@@ -102,4 +102,13 @@
 }
 .volver:hover{
     background-color: rgba(204, 204, 204, 0.3);
+}
+
+.container{
+    display:flex;
+    justify-content:center;
+}
+
+.pais{
+  text-align:center;
 }
