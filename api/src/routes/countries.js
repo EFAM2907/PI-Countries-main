@@ -1,4 +1,5 @@
  const { Router } = require('express');
+ const{getAllCountries, countriesApi} = require('../Controller/country')
 
  const {Countries, Activities} = require('../db');
 // // Importar todos los routers;
@@ -10,7 +11,7 @@
 router.get('/', async(req, res, next) => {
      try{
          const {name} = req.query;
-         const countries =  await Countries.findAll();
+         const countries = await Countries.findAll();
          if(!name){
              res.json(countries);
          }else{
@@ -23,7 +24,7 @@ router.get('/', async(req, res, next) => {
 
 
      }catch (error) {
-         next(error);
+        console.log(error);
      }
 });
 

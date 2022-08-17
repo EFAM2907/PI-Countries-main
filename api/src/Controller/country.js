@@ -2,10 +2,7 @@ const axios = require('axios');
 const { Op } = require('sequelize');
 const { Countries, Activities } = require('../db')
 
-async function getAllCountries(){
-       
-      
-          
+async function countriesApi(){
              
             const countriesApi = await axios.get("https://restcountries.com/v3/all")
             const filterApi = countriesApi.data.map(e => {
@@ -24,8 +21,51 @@ async function getAllCountries(){
              return await Countries.bulkCreate(filterApi)
 
         }
+
+       
            
           
+    const getDb = async()=>{
+      try{
+
+        const dataBase = await Countries.findAll({
+         include:[ {model: Activities,
+              attributes: ['name']
+         }]
+        })
+        return dataBase
+      }
+      catch(err){
+        console.log(err)
+      }
+    }
+
+
+    const getAllCountries = async()=>{
+      try{
+        const api = await countriesApi()
+        const db = await getDb()
+       
+        console.log('api', api)
+        return [...api, ...db]
+  
+        
+      }
+      catch(err){
+        console.log(err)
+      }
+      
+    }
+
+
+
+
+
+
+module.exports = { 
+  countriesApi,
+  getAllCountries
+ };
 
 
 
@@ -77,6 +117,3 @@ async function getAllCountries(){
 //     res.send(error)
 // }
 // };
-
-
-module.exports = { getAllCountries };

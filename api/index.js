@@ -20,7 +20,7 @@
 const server = require('./src/app.js');
 const {conn} = require('./src/db.js');
   // const {loadDb} = require('./src/loadDb/loadDb.js')
-const {getAllCountries} = require('./src/api_db/country.js');
+const {countriesApi} = require('./src/Controller/country.js');
 
  
    
@@ -29,7 +29,7 @@ const {getAllCountries} = require('./src/api_db/country.js');
 conn.sync({ force: true }).then(() => {
    
   server.listen(3001, () => {
-       getAllCountries();
+    countriesApi();
     console.log('%s listening at 3001'); // eslint-disable-line no-console
   });
 });
